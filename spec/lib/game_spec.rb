@@ -183,4 +183,40 @@ describe Game do
 	    expect(g5.score).to eq(133)
     end
 
+    it 'given example score (from excel file)' do
+    	g6 = Game.new
+	    #Frame1
+	    g6.roll(10) #strike
+	    g6.roll(0)
+	    #Frame2
+	    g6.roll(8)
+	    g6.roll(1)
+	    #Frame3
+	    g6.roll(2)
+	    g6.roll(8) #spare
+	    #Frame4
+	    g6.roll(5)
+	    g6.roll(4) 
+	    #Frame5
+	    g6.roll(10) #strike
+	    g6.roll(0)
+	    #Frame6
+	    g6.roll(10) #strike
+	    g6.roll(0)
+	    #Frame7
+	    g6.roll(10) #strike
+	    g6.roll(0) 
+	    #Frame8
+	    g6.roll(5)
+	    g6.roll(5) #spare
+	    #Frame9
+	    g6.roll(10)	#strike
+	    g6.roll(0)
+	    #Frame10
+	    g6.roll(10) #strike
+	    g6.roll(0)
+	    g6.roll(0)
+	    expect(g6.score).to eq(177)
+    end
+
 end
