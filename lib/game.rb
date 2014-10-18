@@ -1,6 +1,5 @@
 class Game
 	def initialize
-		@score = 0
 		@rolls = []
 	end
 	
@@ -9,38 +8,39 @@ class Game
 	end
 
 
-	def score()
+	def score
+		score = 0
 		i = 0
-		while(i<18) do
-			if(rolls[i]==10) do
+		while i<18
+			if(@rolls[i]==10)
 
-				if(rolls[i+2]==10) do
-					score += 10+10+rolls[i+4]
+				if(@rolls[i+2]==10)
+					score += 10+10+@rolls[i+4]
 					i += 2
-				else do
-					score += 10+rolls[i+2]+rolls[i+3]
+				else
+					score += 10+@rolls[i+2]+@rolls[i+3]
 					i += 2
 				end
 			
-			end
-
-			elsif(rolls[i]+rolls[i+1]==10 && rolls[i]!=10) do
-				score += 10+rolls[i+2]
+			elsif @rolls[i]+@rolls[i+1]==10 && @rolls[i]!=10
+				score += 10+@rolls[i+2]
+				i += 2
+			else
+				score += @rolls[i]+@rolls[i+1]
 				i += 2
 			end
 
-			else do
-				score += rolls[i]+rolls[i+1]
-				i += 2
-			end
 		end
 
-		while(i>=18) do
-			if(rolls[i]==10 || rolls[i]+rolls[i+1]==10) do
-				score += rolls[i] + rolls[i+1] + rolls[i+2]
-			else do
-				score += rolls[i] + rolls[i+1]			
+		if i==18
+			if(@rolls[i]==10 || @rolls[i]+@rolls[i+1]==10)
+				score += @rolls[i] + @rolls[i+1] + @rolls[i+2]
+			else
+				score += @rolls[i] + @rolls[i+1]			
 			end
-		end		
+		end	
+		score	
 	end
+
+
 end
