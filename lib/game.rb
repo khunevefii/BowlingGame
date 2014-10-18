@@ -24,7 +24,7 @@ class Game
 			
 			end
 
-			elsif(rolls[i]+rolls[i+1]=10 && rolls[i]!=10) do
+			elsif(rolls[i]+rolls[i+1]==10 && rolls[i]!=10) do
 				score += 10+rolls[i+2]
 				i += 2
 			end
@@ -36,10 +36,10 @@ class Game
 		end
 
 		while(i>=18) do
-			if(rolls[i]+rolls[i+1]!=10) do
-				score += rolls[i] + rolls[i+1]
-			else do
+			if(rolls[i]==10 || rolls[i]+rolls[i+1]==10) do
 				score += rolls[i] + rolls[i+1] + rolls[i+2]
+			else do
+				score += rolls[i] + rolls[i+1]			
 			end
 		end		
 	end
