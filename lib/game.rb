@@ -2,6 +2,7 @@ class Game
 	def initialize
 		@score = 0
 		@rolls = []
+		@eiei = 0
 	end
 	
 	def roll(pins)
